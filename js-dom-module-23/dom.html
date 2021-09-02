@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to my blog website</h1>
+    </header>
+    <main>
+        <section id="blogs">
+            <header>
+                <h2>blog list</h2>
+                <ul id="blog-list">
+                    <li>blog-1</li>
+                    <li>blog-2</li>
+                    <li>blog-3</li>
+                    <li>blog-4</li>
+                </ul>
+
+            </header>
+            <article class="blog">
+                <h3 id="first-title">my awesome blog-1</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus voluptates laudantium labore saepe
+                    enim perferendis quibusdam voluptatum facere tempora, commodi tenetur, fugit amet, molestiae nisi
+                    ipsum. Soluta praesentium excepturi saepe.</p>
+            </article>
+            <article id="secund-blog" class="blog">
+                <h3 id="secund-title">my awesome blog-2</h3>
+                <p>Corporis autem natus quidem facilis error unde assumenda, incidunt quo molestiae fugit reiciendis
+                    mollitia porro adipisci, pariatur ipsa! Rerum, error reprehenderit? Ullam consequuntur voluptates
+                    optio officiis nobis corporis consectetur sit!</p>
+            </article>
+            <article class="blog">
+                <h3 id="third-title">my awesome blog-3</h3>
+                <p>Praesentium officia quo, temporibus vitae enim suscipit soluta laborum aliquam illo nulla minus
+                    commodi at ipsum aperiam exercitationem? Necessitatibus, vitae sequi temporibus voluptatibus iusto
+                    vel dolore libero voluptates consequatur eos.</p>
+            </article>
+            <article class="blog">
+                <h3 id="fourth-title">my awesome blog-4</h3>
+                <p>Praesentium officia quo, temporibus vitae enim suscipit soluta laborum aliquam illo nulla minus
+                    commodi at ipsum aperiam exercitationem? Necessitatibus, vitae sequi temporibus voluptatibus iusto
+                    vel dolore libero voluptates consequatur eos</p>
+            </article>
+        </section>
+    </main>
+    <script>
+        const student = { name: 'kismot Ali', age: 16, height: 60 }
+        // console.log(document);
+        // console.log(document.body);
+        const blogTitles = document.getElementsByTagName('h3');
+        for (const h3 of blogTitles) {
+            console.log(h3.innerText);
+        }
+
+        const blogDetails = document.getElementsByTagName('p');
+        for (const p of blogDetails) {
+            console.log(p.innerText);
+        }
+
+        // get Element by id 
+        // first ID 
+        document.getElementById('first-title').style.color = 'gray';
+        document.getElementById('first-title').style.backgroundColor = 'coral';
+        document.getElementById('first-title').style.padding = '10px'
+        // secund ID 
+        document.getElementById('secund-title').style.color = 'red';
+        document.getElementById('secund-title').style.backgroundColor = 'gray';
+        document.getElementById('secund-title').style.padding = '15px';
+        document.getElementById('secund-title').style.border = '5px dotted black'
+
+        // third ID 
+        document.getElementById('third-title').style.color = 'lime';
+        document.getElementById('third-title').style.fontSize = '32px'
+        document.getElementById('third-title').style.backgroundColor = 'magenta'
+        document.getElementById('third-title').style.border = '10px dashed red'
+        document.getElementById('third-title').style.padding = "20px"
+
+        // fourth ID 
+        document.getElementById('fourth-title').style.color = 'yellow';
+        document.getElementById('fourth-title').style.backgroundColor = "gray"
+        document.getElementById('fourth-title').style.paddingBottom = '30px'
+
+
+
+        // create and add element by using javaScript
+        const li = document.createElement('li');
+        li.innerText = 'blog-5';
+
+        const ul = document.getElementById('blog-list');
+        ul.appendChild(li);
+
+        // add article 
+        const article = document.createElement('article');
+        article.classList.add('blog');
+        // const h3 = document.createElement('h3');
+        // h3.innerText = 'my awesome blog-5';
+        // const p = document.createElement('p');
+        // p.innerText = 'Praesentium officia quo, temporibus vitae enim suscipit soluta laborum aliquam illo nulla minus'
+        // article.appendChild(h3);
+        // article.appendChild(p)
+
+        article.innerHTML = `
+        <h3>my awesome blog-5</h3>
+        <p>Praesentium officia quo, temporibus vitae enim suscipit soluta laborum aliquam illo nulla minus</p>
+        `
+
+
+        // paren of article
+        const blogSection = document.getElementById('blogs');
+        blogSection.appendChild(article);
+
+        // get elements by class name 
+        const blogs = document.getElementsByClassName('blog');
+
+        for (const blog of blogs) {
+            blog.style.border = ('2px solid orange');
+            blog.style.borderRadius = ('10px');
+            blog.style.margin = ('10px');
+            blog.style.padding = ('5px')
+
+        }
+
+    </script>
+</body>
+
+</html>
